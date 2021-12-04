@@ -1,4 +1,4 @@
-print("V4")
+print("V5")
 #this is actually pain I already optimized this but the file is gone and I have to write this again :/
 from mido import MidiFile
 import time
@@ -20,12 +20,11 @@ def parsemidi(mid):
     e = []
     start = time.time()
     for i in mid:
-        if not i.is_meta: #no clue but it work...
-           if i.type == 'note_on': #check if it's a note on
-            mem += i.time #add time to memory time
-            e.append([i.note,mem]) #append note and time
+        mem += i.time # add time to memory time
+        if i.type == 'note_on': #and i.velocity != 0: #check if it's a note on
+            if i.velocity != 0:
+                e.append([i.note,mem]) #append note and time
             if debugmode:
-                print(mem)
                 if time.time() - start >= .5:
                     print(time.time() - start)
                 start = time.time()
@@ -191,7 +190,7 @@ if __name__ == "__main__":
 
     if debugmode:
         print(f"parsed midi in : {(time.time() - start) * 1000} ms")
-
+    #print(uwu)
     keys = []
     for i in key.__dict__.items():
         if i[0].startswith("K"):
