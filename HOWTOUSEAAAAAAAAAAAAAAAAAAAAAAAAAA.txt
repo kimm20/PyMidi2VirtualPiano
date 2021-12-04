@@ -1,0 +1,13 @@
+Run main.exe or use python main.py
+Select midi file
+Switch to virtual piano tab or roblox window
+Wait a few second
+
+Press Spacebar to stop
+
+Edit setting in the config file
+loop (Bool) : 0 = False other than that will be True
+midi dir (String) : Change where the program will scan for midi file ( Ex : C:/MyAmazingMidiFileCollection )
+shift (Int) : More number the lower your midi pitch get.. Idk how to explain it just try changing it if you wanna know what happen
+debug (Bool) : 0 = False other than that will be True (Enable debug mode will make the program run a bit slower)
+maxtimeoutms (Int) : If you try to use blackmidi for some reason just make this number higher...
